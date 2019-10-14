@@ -1,7 +1,8 @@
-import { Server } from "./server";
+import { Server } from './server';
 import Koa from 'koa';
 import { EnviromentImpl } from './enviroment-impl';
-import routerControl from "../router/router-control";
+import routerControl from '../router/router-control';
+import { configureCors } from '../router/cors';
 
 export class ServerImpl implements Server {
     private app: Koa;
@@ -16,6 +17,7 @@ export class ServerImpl implements Server {
     private startServer(){
         const { app } = this;
 
+        app.use(configureCors);
         app.use(routerControl.routes());
 
         app.listen(EnviromentImpl.api.port, () => {
