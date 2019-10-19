@@ -15,7 +15,8 @@ class HandleRequestImpl implements HandleRequest{
         const { router } = this;
 
         router.get('/delay/:delay', handleParamBodyRequest, this.delay.bind(this));
-        router.get('/delay/:delay/url/:protocol//:url*', handleParamBodyRequest, this.delay.bind(this));
+        //nginx here will replace :protocol:// to :protocol:/
+        router.get('/delay/:delay/url/:protocol/:url*', handleParamBodyRequest, this.delay.bind(this));
         router.get('/error/:error', handleParamBodyRequest, this.error.bind(this));
         router.get('/error/:error/delay/:delay', handleParamBodyRequest, this.error.bind(this));
         return this.router;
