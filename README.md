@@ -3,28 +3,33 @@
 ### A service to test a slow http response and more
 
 ### Description
-##Why?
+
+**Why?**
+
 Make a request to simulate a slow response.
 Test how your application responds to a slow request/respose from your backend api.
 Maybe there are others services doing this, with but handle request you might use responses with http error codes as your choice.
 
-##How it works?
+**How it works?**
+
 Handle request will make a request with your url and returns the response in a payload to you.
 
-##It's safe?
+**It's safe?**
+
 Yes, every request just are only redirected, there is no data saved.
 
-#### Taste it
+**My request needs some of header fields like Bearer, it's work?**
 
-** Handle Request** is deployed on [https://amilson.dev/handle-request/index.html], so go ahead and taste it.
-
-### My request needs some of header fields like Bearer
-
-There is no problem, every header send to handle request will be send to the url param.
+Yes, there is no problem, every header send to handle request will be send to the url param.
 
 ### Plus:
 
 * Could be configurable to return HTTP status error, like 404, 500, etc.
+
+### Taste it
+
+**Handle Request** is deployed on https://amilson.dev/handle-request/index.html, so go ahead and taste it.
+
 
 ### API
 
