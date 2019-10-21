@@ -53,6 +53,7 @@ class HandleRequestImpl implements HandleRequest{
                     hostname: hostname,
                     method: 'GET',
                     path: path,
+                    rejectUnauthorized: false,
                     headers: {
                         'Content-Type': 'application/json',
                         ...ctx.headers
