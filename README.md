@@ -1,37 +1,57 @@
-## Welcome to GitHub Pages
+## Handle Request
 
-You can use the [editor on GitHub](https://github.com/Amilson/handle-request/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### A service to test a slow http response and more
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Description
+##Why?
+Make a request to simulate a slow response.
+Test how your application responds to a slow request/respose from your backend api.
+Maybe there are others services doing this, with but handle request you might use responses with http error codes as your choice.
 
-### Markdown
+##How it works?
+Handle request will make a request with your url and returns the response in a payload to you.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+##It's safe?
+Yes, every request just are only redirected, there is no data saved.
 
-```markdown
-Syntax highlighted code block
+#### Taste it
 
-# Header 1
-## Header 2
-### Header 3
+** Handle Request** is deployed on [https://amilson.dev/handle-request/index.html], so go ahead and taste it.
 
-- Bulleted
-- List
+### My request needs some of header fields like Bearer
 
-1. Numbered
-2. List
+There is no problem, every header send to handle request will be send to the url param.
 
-**Bold** and _Italic_ and `Code` text
+### Plus:
 
-[Link](url) and ![Image](src)
+* Could be configurable to return HTTP status error, like 404, 500, etc.
+
+### API
+
+#### Request
+
+Build a URL with the following params:
+
+```bash
+https://amilson.dev/handle-request/delay/{delay_time}
+```
+```bash
+https://amilson.dev/handle-request/delay/{delay_time}/url/{url}
+```
+```bash
+https://amilson.dev/handle-request/error/{http_error}
+```
+```bash
+https://amilson.dev/handle-request/error/{http_error}/delay/{delay_time}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+<dl>
+    <dt><code>delay_time</code></dt>
+    <dd>Time to delay in milliseconds</dd>
+    <dt><code>url</code></dt>
+    <dd>The URL to get response</dd>
+    <dt><code>http_error</code></dt>
+    <dd>Any http error code</dd>
+</dl>
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Amilson/handle-request/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Feel free to send contributions by pull-request
