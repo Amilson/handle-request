@@ -50,6 +50,7 @@ https://amilson.dev/handle-request/error/{http_error}
 https://amilson.dev/handle-request/error/{http_error}/delay/{delay_time}
 ```
 
+
 <dl>
     <dt><code>delay_time</code></dt>
     <dd>Time to delay in milliseconds</dd>
